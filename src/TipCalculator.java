@@ -25,7 +25,9 @@ public class TipCalculator {
         totalTip = Math.round(totalTip * 100.0) / 100.0;
         double totalBillWithTip = (totalBill + totalTip);
         double costPerPerson = (totalBill / numParty);
+        costPerPerson = Math.round(costPerPerson * 100.0) / 100.0;
         double tipPerPerson = (totalTip / numParty);
+        tipPerPerson = Math.round(tipPerPerson * 100.0) / 100.0;
         double totalCostPerPerson = (costPerPerson + tipPerPerson);
 
         System.out.println("Total bill before tip: $" + totalBill);
