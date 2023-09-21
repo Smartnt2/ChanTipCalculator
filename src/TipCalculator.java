@@ -4,7 +4,7 @@ import java.lang.Math;
 public class TipCalculator {
     public static void main(String[] args) {
         double totalBill = 0;
-        double cost = 0;
+        double cost;
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Welcome to the Tip Calculator");
