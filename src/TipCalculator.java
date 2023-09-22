@@ -1,8 +1,10 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 import java.lang.Math;
 
 public class TipCalculator {
     public static void main(String[] args) {
+        ArrayList<String> food = new ArrayList<>();
         double totalBill = 0;
         double cost;
         double totalTax = 0;
@@ -36,8 +38,12 @@ public class TipCalculator {
         while (true) {
             System.out.print("Enter a cost in dollars and cents (-1 to end): ");
             cost = scan.nextDouble();
+            scan.nextLine();
             if (cost == -1) break;
             totalBill += cost;
+            System.out.print("Enter the item you purchased: ");
+            String itemPurchased = scan.nextLine();
+            food.add(itemPurchased);
         }
 
         if (includeTax.equals("y")) {
@@ -46,33 +52,24 @@ public class TipCalculator {
             totalTip = (totalBill * (tipPercentage / 100.0));
             totalTip = Math.round(totalTip * 100.0) / 100.0;
             totalAmount = (totalBill + totalTip + totalTax);
+            totalAmount = Math.round(totalAmount * 100.0) / 100.0;
 
             taxPerPerson = (totalTax / numParty);
             taxPerPerson = Math.round(taxPerPerson * 100.0) / 100.0;
-
-            costPerPerson = (totalBill / numParty);
-            costPerPerson = Math.round(costPerPerson * 100.0) / 100.0;
-
-            tipPerPerson = (totalTip / numParty);
-            tipPerPerson = Math.round(tipPerPerson * 100.0) / 100.0;
-
-            totalCostPerPerson = (totalAmount / numParty);
-            totalCostPerPerson = Math.round(totalCostPerPerson * 100.0) / 100.0;
 
         } else {
             totalTip = (totalBill * (tipPercentage / 100.0));
             totalTip = Math.round(totalTip * 100.0) / 100.0;
             totalAmount = (totalBill + totalTip);
+            totalAmount = Math.round(totalAmount * 100.0) / 100.0;
 
-            costPerPerson = (totalBill / numParty);
-            costPerPerson = Math.round(costPerPerson * 100.0) / 100.0;
-
-            tipPerPerson = (totalTip / numParty);
-            tipPerPerson = Math.round(tipPerPerson * 100.0) / 100.0;
-
-            totalCostPerPerson = (totalAmount / numParty);
-            totalCostPerPerson = Math.round(totalCostPerPerson * 100.0) / 100.0;
         }
+        costPerPerson = (totalBill / numParty);
+        costPerPerson = Math.round(costPerPerson * 100.0) / 100.0;
+        tipPerPerson = (totalTip / numParty);
+        tipPerPerson = Math.round(tipPerPerson * 100.0) / 100.0;
+        totalCostPerPerson = (totalAmount / numParty);
+        totalCostPerPerson = Math.round(totalCostPerPerson * 100.0) / 100.0;
 
         System.out.println(" ");
         System.out.println("Total bill before tip: $" + totalBill);
@@ -95,6 +92,10 @@ public class TipCalculator {
         }
 
         System.out.println("Total cost per person: $" + totalCostPerPerson);
+        System.out.println("Items purchased:");
+        for (String s : food) {
+            System.out.println(s);
+        }
 
     }
 }
