@@ -6,9 +6,12 @@ public class TipCalculator {
         double totalBill = 0;
         double cost;
         double totalTax = 0;
+        double totalTip;
         double totalAmount;
         double totalCostPerPerson;
+        double costPerPerson;
         double taxPerPerson = 0;
+        double tipPerPerson;
         int taxPercentage = 0;
 
         Scanner scan = new Scanner(System.in);
@@ -36,33 +39,40 @@ public class TipCalculator {
             if (cost == -1) break;
             totalBill += cost;
         }
-        double totalTip = (totalBill * (tipPercentage / 100.0));
-        totalTip = Math.round(totalTip * 100.0) / 100.0;
 
         if (includeTax.equals("y")) {
             totalTax = (totalBill * (taxPercentage / 100.0));
             totalTax = Math.round(totalTax * 100.0) / 100.0;
-        }
-
-        if (includeTax.equals("y")) {
+            totalTip = (totalBill * (tipPercentage / 100.0));
+            totalTip = Math.round(totalTip * 100.0) / 100.0;
             totalAmount = (totalBill + totalTip + totalTax);
-        } else {
-            totalAmount = (totalBill + totalTip);
-        }
 
-        double costPerPerson = (totalBill / numParty);
-        costPerPerson = Math.round(costPerPerson * 100.0) / 100.0;
-
-        double tipPerPerson = (totalTip / numParty);
-        tipPerPerson = Math.round(tipPerPerson * 100.0) / 100.0;
-
-        if (includeTax.equals("y")) {
             taxPerPerson = (totalTax / numParty);
             taxPerPerson = Math.round(taxPerPerson * 100.0) / 100.0;
-        }
 
-        totalCostPerPerson = (totalAmount / numParty);
-        totalCostPerPerson = Math.round(totalCostPerPerson * 100.0) / 100.0;
+            costPerPerson = (totalBill / numParty);
+            costPerPerson = Math.round(costPerPerson * 100.0) / 100.0;
+
+            tipPerPerson = (totalTip / numParty);
+            tipPerPerson = Math.round(tipPerPerson * 100.0) / 100.0;
+
+            totalCostPerPerson = (totalAmount / numParty);
+            totalCostPerPerson = Math.round(totalCostPerPerson * 100.0) / 100.0;
+
+        } else {
+            totalTip = (totalBill * (tipPercentage / 100.0));
+            totalTip = Math.round(totalTip * 100.0) / 100.0;
+            totalAmount = (totalBill + totalTip);
+
+            costPerPerson = (totalBill / numParty);
+            costPerPerson = Math.round(costPerPerson * 100.0) / 100.0;
+
+            tipPerPerson = (totalTip / numParty);
+            tipPerPerson = Math.round(tipPerPerson * 100.0) / 100.0;
+
+            totalCostPerPerson = (totalAmount / numParty);
+            totalCostPerPerson = Math.round(totalCostPerPerson * 100.0) / 100.0;
+        }
 
         System.out.println(" ");
         System.out.println("Total bill before tip: $" + totalBill);

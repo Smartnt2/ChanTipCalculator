@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e32fbcd3-d4ab-4188-95d4-86ad582d586e" name="Changes" comment="added freestyle (tax)">
+    <list default="true" id="e32fbcd3-d4ab-4188-95d4-86ad582d586e" name="Changes" comment="added ability to not include tax">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TipCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TipCalculator.java" afterDir="false" />
     </list>
@@ -72,7 +72,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695330774244</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added ability to not include tax">
+      <option name="closed" value="true" />
+      <created>1695333954117</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695333954117</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -90,7 +98,8 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="removed redundancy" />
     <MESSAGE value="added freestyle (tax)" />
-    <option name="LAST_COMMIT_MESSAGE" value="added freestyle (tax)" />
+    <MESSAGE value="added ability to not include tax" />
+    <option name="LAST_COMMIT_MESSAGE" value="added ability to not include tax" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
