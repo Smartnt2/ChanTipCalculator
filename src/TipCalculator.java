@@ -4,6 +4,7 @@ import java.lang.Math;
 
 public class TipCalculator {
     public static void main(String[] args) {
+        //initialize variables
         ArrayList<String> food = new ArrayList<>();
         double totalBill = 0;
         double cost;
@@ -25,7 +26,6 @@ public class TipCalculator {
         System.out.print("Enter tip percentage (do not include % symbol): ");
         int tipPercentage = scan.nextInt();
         scan.nextLine();
-
         System.out.print("Would you like to include tax? (y/n): ");
         String includeTax = scan.nextLine();
 
@@ -34,18 +34,19 @@ public class TipCalculator {
             taxPercentage = scan.nextInt();
             scan.nextLine();
         }
-
+        //will continue to loop till user enters -1
         while (true) {
             System.out.print("Enter a cost in dollars and cents (-1 to end): ");
             cost = scan.nextDouble();
             scan.nextLine();
             if (cost == -1) break;
             totalBill += cost;
+            //will append each itemPurchased to ArrayList food
             System.out.print("Enter the item you purchased: ");
             String itemPurchased = scan.nextLine();
             food.add(itemPurchased);
         }
-
+        //calculations
         if (includeTax.equals("y")) {
             totalTax = (totalBill * (taxPercentage / 100.0));
             totalTax = Math.round(totalTax * 100.0) / 100.0;
@@ -93,6 +94,7 @@ public class TipCalculator {
 
         System.out.println("Total cost per person: $" + totalCostPerPerson);
         System.out.println("Items purchased:");
+        //prints each individual string in ArrayList food
         for (String s : food) {
             System.out.println(s);
         }
