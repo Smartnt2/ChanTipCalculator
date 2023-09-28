@@ -15,7 +15,7 @@ public class TipCalculator {
         double costPerPerson;
         double taxPerPerson = 0;
         double tipPerPerson;
-        int taxPercentage = 0;
+        double taxPercentage = 0;
 
         Scanner scan = new Scanner(System.in);
 
@@ -24,14 +24,14 @@ public class TipCalculator {
         int numParty = scan.nextInt();
         scan.nextLine();
         System.out.print("Enter tip percentage (do not include % symbol): ");
-        int tipPercentage = scan.nextInt();
+        double tipPercentage = scan.nextDouble();
         scan.nextLine();
         System.out.print("Would you like to include tax? (y/n): ");
         String includeTax = scan.nextLine();
 
         if (includeTax.equals("y")) {
             System.out.print("Enter tax percentage (do not include % symbol): ");
-            taxPercentage = scan.nextInt();
+            taxPercentage = scan.nextDouble();
             scan.nextLine();
         }
         //will continue to loop till user enters -1
